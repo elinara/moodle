@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+files:
+  - source: /index.php
+    destination: /var/www/html/
+  - source: moodle/
+    destination: /var/www/html/moodle/
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies
+      timeout: 300
+      runas: root
+
